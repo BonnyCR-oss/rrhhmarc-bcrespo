@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>RRHH - Marcaciones</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+    th { background: #eee; }
+    form label { display: inline-block; margin: 4px 10px 4px 0; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Registro de marcaciones - RRHH</h1>
+
+  <h2 id="titulo-form">Nueva marcación</h2>
+  <form id="form">
+    <input type="hidden" id="id">
+    <label>Código empleado <input id="codigo_empleado" required></label>
+    <label>Nombre <input id="nombre_empleado" required></label>
+    <label>Fecha <input type="date" id="fecha" required></label><br>
+    <label>Ingreso programado <input type="time" id="hora_ingreso_programada" value="08:00" required></label>
+    <label>Ingreso real <input type="time" id="hora_ingreso_real"></label>
+    <label>Salida programada <input type="time" id="hora_salida_programada" value="16:00" required></label>
+    <label>Salida real <input type="time" id="hora_salida_real"></label><br>
+    <label>Observación <input id="observacion" size="40"></label>
+    <button type="submit">Guardar</button>
+    <button type="button" id="cancelar">Cancelar</button>
+  </form>
+  <p id="mensaje" class="error"></p>
+
+  <h2>Marcaciones</h2>
+  <label>Empleado <input id="f_empleado" placeholder="EMP001"></label>
+  <label>Fecha <input type="date" id="f_fecha"></label>
+  <button id="filtrar">Filtrar</button>
+  <button id="limpiar">Limpiar</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Código</th><th>Nombre</th><th>Fecha</th>
+        <th>Ingreso prog.</th><th>Ingreso real</th><th>Salida prog.</th><th>Salida real</th>
+        <th>Estado</th><th>Observación</th><th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
